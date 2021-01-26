@@ -6,7 +6,7 @@ import './Main.css';
 
 
 
-
+// Developd By Yub Uddin 01/25/2021
 
 
 function Main(props) {
@@ -14,7 +14,7 @@ function Main(props) {
   const [interv, setInterv] = useState();
   const [status, setStatus] = useState(0);
   const [number, setNumber] = useState('');
-  const [number1, setNumber1] = useState('');
+ /*  const [number1, setNumber1] = useState(''); */
   const para = parseInt(number)+5;
  
   
@@ -34,7 +34,7 @@ function Main(props) {
 
    
 
-
+ 
   const run = () => {
     if(updatedM === 60){
       updatedH++;
@@ -52,17 +52,19 @@ function Main(props) {
     updatedMs++;
     return setTime({ms:updatedMs, s:updatedS, m:updatedM, h:updatedH});
   };
+
+  //stop count
   const stop = () => {
     clearInterval(interv);
     setStatus(2);
   };
-
+// reset
   const reset = () => {
     clearInterval(interv);
     setStatus(0);
     setTime({ms:0, s:0, m:0, h:0})
   };
-
+   // resume count
   const resume = () => start();
   
 
