@@ -22,12 +22,16 @@ margin-top: 200px;
 .label1{
 background-color:black;
 margin-left: 50px;
-margin-bottom: 20px;
+margin-bottom: 40px;
 padding: 5px;
 border: 2px solid white;
-color:#FF0080;;
+color:#FF0080;
   font-family: monospace;
   font-size:20px;
+
+}
+.Header-search{
+color:#FF0080;
 
 }
 .clock-holder {
@@ -56,7 +60,7 @@ color:#FF0080;;
 }
 
 .stopwatch .stopwatch-btn {
-  background: #fff;
+  background:black;
   margin-top: 30px;
   margin-left: 5px;
   border: none;
@@ -77,8 +81,9 @@ color:#FF0080;;
 }
 
 .stopwatch .stopwatch-btn-gre{
+ background-color: black ;
   border: 2px solid#FF0080;
-  color: #00ABA9;
+  color:#FF0080;
 }
 .stopwatch .stopwatch-btn-red:hover {
   background: #C85454;
