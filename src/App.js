@@ -1,79 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {
+  BrowserRouter,
+
+  Route,
+  Switch
+} from "react-router-dom";
 import './App.css';
-import BtnComponent from './Components/BtnComponent';
-import DisplayComponent from './Components/DisplayComponent';
+import Header from './Components/Header';
+import Jsonvalue from './Components/Jsonvalue';
+import Main from './Components/Main';
 
 
 function App() {
-  const [time, setTime] = useState({ms:0, s:0, m:0, h:0});
-  const [interv, setInterv] = useState();
-  const [status, setStatus] = useState(0);
   
-  // Not started = 0
-  // started = 1
-  // stopped = 2
-
-  const start = () => {
-    run();
-    setStatus(1);
-    setInterv(setInterval(run, 10));
-  };
- 
-  var updatedMs = time.ms, updatedS = time.s, updatedM = time.m, updatedH = time.h;
-
-   
-
-
-  const run = () => {
-    if(updatedM === 60){
-      updatedH++;
-      updatedM = 0;
-    }
-    if(updatedS === 60){
-      updatedM=updatedM+2; 
-      
-      updatedS = 0;
-    }
-    if(updatedMs === 100){
-      updatedS=updatedS+2;
-      updatedMs = 0;
-    }
-    updatedMs++;
-    return setTime({ms:updatedMs, s:updatedS, m:updatedM, h:updatedH});
-  };
-  const stop = () => {
-    clearInterval(interv);
-    setStatus(2);
-  };
-
-  const reset = () => {
-    clearInterval(interv);
-    setStatus(0);
-    setTime({ms:0, s:0, m:0, h:0})
-  };
-
-  const resume = () => start();
-
-
   return (
-    <div className="main-section">
-     <div className="clock-holder">
-          <div className="stopwatch">
-               <DisplayComponent time={time}/>
-               <BtnComponent status={status} resume={resume} reset={reset} stop={stop} start={start}/>
-          </div>
-          
-     </div>
-
-      {/* <div className="clock-holder">
-          <div className="stopwatch">
-               <DisplayComponentinc time={timeinc}/>
-               <BtnComponentinc status={status} resume={resume} reset={reset} stop={stop} startinc={startinc}/>
-          </div>
-          
-     </div> */}
-          
-     </div>
+    < BrowserRouter>
+      <div>
+          <Header/>
+        <Switch>
+          <Route  exact={true} path="/">
+            <Main/>
+          </Route>
+           <Route  path="/jasonvalue/:num">
+            <Jsonvalue/>
+          </Route>
+            <Route  path="/jasonvalue/:num">
+            <Jsonvalue/>
+          </Route>
+           <Route  path="/jasonvalue/:num/:num1">
+            <Jsonvalue/>
+          </Route>
+        </Switch>
+      </div>
+    </ BrowserRouter>
    
   );
 }

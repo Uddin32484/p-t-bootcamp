@@ -12,7 +12,7 @@ function DisplayComponent(props) {
   return (
     
     <div>
-      <div>Incriment By 2</div>
+      <div className="label1">Increment By 2</div>
        {h()}&nbsp;&nbsp;
        <span>{(props.time.m >= 10)? props.time.m : "0"+ props.time.m}</span>&nbsp;-&nbsp;
       <span>{(props.time.s >= 10)? props.time.s : "0"+props.time.s }</span>&nbsp;-&nbsp;
